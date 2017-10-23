@@ -7,5 +7,15 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <!--&lt;!&ndash;启动页布局为一般主题&ndash;&gt;-->
+    <!--<style name="LoadingTheme" parent="android:Theme.Light.NoTitleBar.Fullscreen">-->
+    <!--&lt;!&ndash;<item name="android:windowBackground">@drawable/layer_loading_bg</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="android:windowIsTranslucent">false</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="android:windowDisablePreview">true</item>&ndash;&gt;-->
+    <!--</style>-->
+    <!--启动页布局为AppCompat主题-->
+    <style name="LoadingTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/layer_loading_bg</item>
+    </style>
 </resources>

@@ -1,4 +1,4 @@
-package com.ryzhang;
+package com.ryzhang.android_demo;
 
 import android.app.Application;
 
@@ -8,7 +8,7 @@ import android.app.Application;
  * @time 11:37
  * Project
  */
-public class Applications extends Application{
+public class Applications extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

@@ -1,0 +1,27 @@
+package com.ryzhang.android_demo.db;
+
+import com.j256.ormlite.android.apptools.OrmLiteConfigUtil;
+import com.ryzhang.android_demo.db.datadict.SimpleData;
+
+import java.io.File;
+import java.io.IOException;
+import java.sql.SQLException;
+
+/**
+ * 将字典类（表）生成配置文件
+ *
+ * @author ryzhang
+ * @date 2017/10/18
+ * @time 16:56
+ * Project
+ */
+public class DatabaseConfigUtil extends OrmLiteConfigUtil {
+    private static final Class<?>[] classes = new Class[]{
+            SimpleData.class,
+    };
+
+    public static void main(String[] args) throws SQLException, IOException {
+        File configFile = new File(System.getProperty("user.dir") + "\\app\\src\\main\\res\\raw", "ormlite_config.txt");
+        writeConfigFile(configFile, classes);
+    }
+}

@@ -1,4 +1,4 @@
-package com.ryzhang.entity;
+package com.ryzhang.android_demo.entity;
 
 /**
  * 所有entity都要继承BaseEntity

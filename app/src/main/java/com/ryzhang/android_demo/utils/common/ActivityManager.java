@@ -1,4 +1,4 @@
-package com.ryzhang.utils.common;
+package com.ryzhang.android_demo.utils.common;
 
 import android.app.Activity;
 

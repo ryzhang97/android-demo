@@ -1,13 +1,15 @@
-package com.ryzhang.db;
+package com.ryzhang.android_demo.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
-import com.ryzhang.utils.common.Logcat;
+import com.j256.ormlite.table.TableUtils;
+import com.ryzhang.android_demo.R;
+import com.ryzhang.android_demo.db.datadict.SimpleData;
+import com.ryzhang.android_demo.utils.common.Logcat;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -24,8 +26,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
      * 数据库名称
      */
     private static final String DB_NAME = "ryzhang.db";
-
-    private static final String TAG = "match";
     /**
      * 数据库版本
      */
@@ -34,29 +34,37 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
      * 存放Dao的map
      */
     private Map<String, Dao> daos = new HashMap<String, Dao>();
+
+    /**
+     * logcat tag
+     */
+    private Class claz;
     /**
      * 数据库帮助类实例
      */
     private static DatabaseHelper instance;
 
     private DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, VERSION);
+        super(context, DB_NAME, null, VERSION, R.raw.ormlite_config);//利用配置文件生成表
+//        super(context, DB_NAME, null, VERSION);
+        claz = getClass();
+        Logcat.d(claz, "初始化 DatabaseHelper");
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
-        Logcat.d(DatabaseHelper.class, "创建数据库表，当前数据版本：" + VERSION);
-//        try {
-//            TableUtils.createTable(connectionSource, Datadict.class);
-//        } catch (SQLException e) {
-//            Logcat.e(DatabaseHelper.class,"创建数据库表失败");
-//            e.printStackTrace();
-//        }
+        Logcat.d(claz, "创建数据库表，当前数据版本：" + VERSION);
+        try {
+            TableUtils.createTable(connectionSource, SimpleData.class);
+        } catch (SQLException e) {
+            Logcat.e(claz, "创建数据库表失败");
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource, int i, int i1) {
-//        Log.d(TAG,"更新数据库表，当前数据版本："+VERSION);
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource, int oldVersion, int newVersion) {
+        Logcat.d(claz, "当前数据版本：" + VERSION);
 //        try {
 //            String sql1 = "alter table tb_datadict add test text";
 //            getDao(Datadict.class).executeRawNoArgs(sql1);
@@ -108,7 +116,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
      */
     @Override
     public void close() {
-        Log.d(TAG, "关闭数据库");
+        Logcat.d(claz, "关闭数据库");
         super.close();
         for (String key : daos.keySet()) {
             Dao dao = daos.get(key);

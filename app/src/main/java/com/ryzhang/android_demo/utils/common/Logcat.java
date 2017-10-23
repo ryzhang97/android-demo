@@ -1,6 +1,8 @@
-package com.ryzhang.utils.common;
+package com.ryzhang.android_demo.utils.common;
 
 import android.util.Log;
+
+import com.ryzhang.android_demo.BuildConfig;
 
 /**
  * @author ryzhang
@@ -10,8 +12,8 @@ import android.util.Log;
  */
 public class Logcat {
     public static final String TAG = "ryzhang";
-    private static boolean isOpen = true;//是否打开log
-    private static boolean isWhole = false;//是否全部显示log
+    private static boolean isOpen = BuildConfig.LOG;//是否打开log
+    private static boolean isWhole = true;//是否全部显示log
     private static Class isClass = Logcat.class;//是否全部显示log
 
     /**
@@ -71,6 +73,6 @@ public class Logcat {
     }
 
     public static void e(String tag, String content) {
-        Log.d(tag, content);
+        Log.e(tag, content);
     }
 }

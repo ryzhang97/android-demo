@@ -5,16 +5,18 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.ryzhang.android_demo"
-        minSdkVersion 20
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "boolean", "LOG", "true"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "LOG", "false")
         }
     }
 }
@@ -26,7 +28,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.j256.ormlite:ormlite-android:5.0'
+    compile 'com.j256.ormlite:ormlite-core:5.0'
     testCompile 'junit:junit:4.12'
-    compile files('libs/ormlite-android-5.0.jar')
-    compile files('libs/ormlite-core-5.0.jar')
 }

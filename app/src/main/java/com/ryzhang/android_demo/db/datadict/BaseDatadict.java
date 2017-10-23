@@ -1,4 +1,4 @@
-package com.ryzhang.db;
+package com.ryzhang.android_demo.db.datadict;
 
 /**
  * @author ryzhang

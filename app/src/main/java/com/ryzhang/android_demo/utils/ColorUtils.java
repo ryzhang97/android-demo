@@ -1,4 +1,4 @@
-package com.ryzhang.utils;
+package com.ryzhang.android_demo.utils;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
