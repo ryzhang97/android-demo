@@ -1,4 +1,4 @@
-package com.ryzhang.android_demo.utils.common;
+package com.ryzhang.utils.common;
 
 import android.app.Activity;
 
@@ -67,6 +67,7 @@ public class ActivityManager {
 
     /**
      * 将当前Activity推入栈中
+     * @param activity
      */
     public void pushActivity(Activity activity) {
         if (activityStack == null) {

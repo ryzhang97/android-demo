@@ -1,9 +1,8 @@
-package com.ryzhang.android_demo.module;
+package com.ryzhang.android_demo.module.app;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.ryzhang.android_demo.db.DatabaseHelper;
 import com.ryzhang.utils.annotation.ViewInjectUtil;
@@ -15,7 +14,7 @@ import com.ryzhang.utils.common.ActivityManager;
  * @time 17:43
  * Project
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends Activity {
     private DatabaseHelper databaseHelper = null;
     protected Context context;
     protected ActivityManager activityManager;
@@ -48,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         context = this;
         databaseHelper = DatabaseHelper.getHelper(context);
         activityManager = ActivityManager.getActivityManager();
-        activityManager.pushActivity((Activity) context);
+        activityManager.pushActivity(this);
     }
 
     /**

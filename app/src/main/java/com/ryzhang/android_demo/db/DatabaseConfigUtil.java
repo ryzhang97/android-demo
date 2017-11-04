@@ -1,7 +1,10 @@
 package com.ryzhang.android_demo.db;
 
 import com.j256.ormlite.android.apptools.OrmLiteConfigUtil;
-import com.ryzhang.android_demo.db.datadict.SimpleData;
+import com.ryzhang.android_demo.db.datadict.Employee;
+import com.ryzhang.android_demo.db.datadict.Sign;
+import com.ryzhang.android_demo.db.datadict.User;
+import com.ryzhang.android_demo.db.datadict.WorkType;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +20,7 @@ import java.sql.SQLException;
  */
 public class DatabaseConfigUtil extends OrmLiteConfigUtil {
     private static final Class<?>[] classes = new Class[]{
-            SimpleData.class,
+            User.class, Employee.class, WorkType.class, Sign.class
     };
 
     public static void main(String[] args) throws SQLException, IOException {

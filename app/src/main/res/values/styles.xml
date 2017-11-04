@@ -1,21 +1,45 @@
 <resources>
+    <!--继承activity主题-->
+    <style name="Theme" parent="android:Theme.Light.NoTitleBar"></style>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-    <!--&lt;!&ndash;启动页布局为一般主题&ndash;&gt;-->
-    <!--<style name="LoadingTheme" parent="android:Theme.Light.NoTitleBar.Fullscreen">-->
-    <!--&lt;!&ndash;<item name="android:windowBackground">@drawable/layer_loading_bg</item>&ndash;&gt;-->
-    <!--&lt;!&ndash;<item name="android:windowIsTranslucent">false</item>&ndash;&gt;-->
-    <!--&lt;!&ndash;<item name="android:windowDisablePreview">true</item>&ndash;&gt;-->
-    <!--</style>-->
-    <!--启动页布局为AppCompat主题-->
-    <style name="LoadingTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="LoadingTheme" parent="Theme">
+        <item name="android:windowBackground">@mipmap/loading_main_bg</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@drawable/layer_loading_bg</item>
+        <!--<item name="android:windowIsTranslucent">false</item>-->
+        <!--<item name="android:windowDisablePreview">true</item>-->
     </style>
+
+    <!-- 继承 AppCompat主题 -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <!--<item name="windowNoTitle">true</item>-->
+    </style>
+
+    <style name="DrawTheme" parent="AppTheme">
+        <!--<item name="windowActionBar">true</item>-->
+
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <!--<item name="windowNoTitle">true</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:statusBarColor"></item>-->
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--&lt;!&ndash;启动页布局为AppCompat主题&ndash;&gt;-->
+    <!--<style name="LoadingTheme" parent="AppTheme">-->
+    <!--<item name="windowNoTitle">true</item>-->
+    <!--&lt;!&ndash;<item name="windowActionBar">false</item>&ndash;&gt;-->
+    <!--<item name="android:windowFullscreen">true</item>-->
+    <!--<item name="android:windowBackground">@mipmap/loading_main_bg</item>-->
+    <!--&lt;!&ndash;<item name="android:windowContentOverlay">@null</item>&ndash;&gt;-->
+    <!--</style>-->
+
+
 </resources>

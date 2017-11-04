@@ -1,18 +1,20 @@
 package com.ryzhang.android_demo.module;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
 import com.ryzhang.android_demo.R;
+import com.ryzhang.utils.annotation.ContentView;
 
-public class LoadingActivity extends AppCompatActivity {
-
+@ContentView(R.layout.activity_app_loading)
+public class LoadingActivity extends BaseActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loading);
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    protected void initListener() {
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        Intent intent = new Intent(context, MainActivity.class);
+//        startActivity(intent);
     }
+
+
 }

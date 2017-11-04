@@ -1,0 +1,82 @@
+--1、创建salary数据库
+--USE [master]
+--GO
+
+/****** Object:  Database [Salary]    Script Date: 2017/6/11 17:24:30 ******/
+/*
+CREATE DATABASE Salary
+ CONTAINMENT = NONE
+ ON  PRIMARY
+( NAME = N'Salary', FILENAME = N'D:\Work\db\salary\Salary.mdf' , SIZE = 5120KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON
+( NAME = N'Salary_log', FILENAME = N'D:\Work\db\salary\Salary_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO*/
+
+/*
+需求
+用户表：姓名，类型，手机号码(主键)，密码 --登录
+员工表：姓名，工种，手机号码(主键)
+工作类型表：混凝土，外粉，内粉，其他
+签到表：姓名，手机号码，工作类型，工时，日期
+
+
+功能
+	借支：姓名，手机号，金额，日期
+	报销：姓名，手机号，金额，日期，类型
+	登录：管理员，用户
+	报表：
+		工作详情：姓名，手机号码，日期，工作类型，工时，日工资，工资
+		员工工资：姓名，手机号码，工种，总工时，日工资，总工资
+	签到：人员签到
+
+
+
+*/
+
+--2、创建表格
+
+--2.1创建用户表
+use Salary
+go
+/*
+create table T_Account
+(
+	accountNo int identity not null,--序号
+	accountName varchar(10) not null,--姓名
+	accountPassword varchar(20) not null,--密码
+	accountType int  not null,--类型：1、管理员，2、用户
+	accountPhone char(15) not null primary key--手机号码
+)
+*/
+
+
+--2.2创建员工表
+/*
+create table T_Employee
+(
+	employeeNo int identity not null,--序号
+	employeeName varchar(10) not null,--姓名
+	employeePhone char(15) not null primary key,--手机号码
+	employeeType int not null,--工种：1、大工，小工
+	employeeWages float not null --日工资
+)
+*/
+--2.3创建签到表
+/*
+create table T_Sign
+(
+	signName varchar(10) not null,--姓名
+	signPhone char(15) not null,--手机号码
+	workType varchar(15) not null,--工作类型
+	signTime float not null,--工时
+	signDate date not null--日期
+)
+*/
+--2.4创建工作类型表
+/*
+create table T_Type
+(
+	workType varchar(15) not null
+)
+*/
+

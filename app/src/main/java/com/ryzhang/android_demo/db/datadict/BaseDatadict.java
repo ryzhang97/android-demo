@@ -1,12 +1,14 @@
 package com.ryzhang.android_demo.db.datadict;
 
+import java.io.Serializable;
+
 /**
  * @author ryzhang
  * @date 2017/10/18
  * @time 11:50
  * Project
  */
-public class BaseDatadict implements Cloneable {
+public class BaseDatadict implements Cloneable, Serializable {
     @Override
     public BaseDatadict clone() {
         BaseDatadict datadict = null;

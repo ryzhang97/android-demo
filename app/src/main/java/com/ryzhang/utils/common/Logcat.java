@@ -1,4 +1,4 @@
-package com.ryzhang.android_demo.utils.common;
+package com.ryzhang.utils.common;
 
 import android.util.Log;
 

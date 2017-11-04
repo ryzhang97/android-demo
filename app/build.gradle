@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.ryzhang.android_demo"
         minSdkVersion 19
@@ -11,6 +10,20 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "boolean", "LOG", "true"
+    }
+    signingConfigs { //签名配置表
+        debug {
+            keyAlias 'demo_app'
+            keyPassword '15056020247'
+            storeFile file('../app.keystore')
+            storePassword '15056020247'
+        }
+        release {
+            keyAlias 'demo_app'
+            keyPassword '15056020247'
+            storeFile file('../app.keystore')
+            storePassword '15056020247'
+        }
     }
     buildTypes {
         release {
@@ -22,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.android.support:design:26.1.0'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -29,6 +43,16 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.j256.ormlite:ormlite-android:5.0'
-    compile 'com.j256.ormlite:ormlite-core:5.0'
+//    compile 'com.j256.ormlite:ormlite-core:5.0'
+    compile 'com.google.code.gson:gson:2.2.4'
     testCompile 'junit:junit:4.12'
+    compile "me.leolin:ShortcutBadger:1.1.19@aar"
 }
+//allprojects {
+repositories {
+    //桌面角标
+    mavenCentral()
+    google()
+}
+//}
+//桌面角标 https://github.com/leolin310148/ShortcutBadger

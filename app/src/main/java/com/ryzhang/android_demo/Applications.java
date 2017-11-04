@@ -12,5 +12,11 @@ public class Applications extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+//        SqlScoutServer.create(this, getPackageName());
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 }
