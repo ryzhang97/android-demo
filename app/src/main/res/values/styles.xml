@@ -5,8 +5,6 @@
     <style name="LoadingTheme" parent="Theme">
         <item name="android:windowBackground">@mipmap/loading_main_bg</item>
         <item name="android:windowFullscreen">true</item>
-        <!--<item name="android:windowIsTranslucent">false</item>-->
-        <!--<item name="android:windowDisablePreview">true</item>-->
     </style>
 
     <!-- 继承 AppCompat主题 -->
@@ -17,15 +15,6 @@
         <!--<item name="colorAccent">@color/colorAccent</item>-->
         <!--<item name="android:windowFullscreen">true</item>-->
         <!--<item name="windowNoTitle">true</item>-->
-    </style>
-
-    <style name="DrawTheme" parent="AppTheme">
-        <!--<item name="windowActionBar">true</item>-->
-
-        <!--<item name="android:windowFullscreen">true</item>-->
-        <!--<item name="windowNoTitle">true</item>-->
-        <!--<item name="android:windowTranslucentStatus">true</item>-->
-        <!--<item name="android:statusBarColor"></item>-->
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

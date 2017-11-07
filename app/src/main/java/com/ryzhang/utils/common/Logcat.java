@@ -75,4 +75,8 @@ public class Logcat {
     public static void e(String tag, String content) {
         Log.e(tag, content);
     }
+
+    public static void e(String tag, String content, Throwable tr) {
+        Log.e(tag, content, tr);
+    }
 }

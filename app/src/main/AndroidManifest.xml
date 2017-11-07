@@ -34,8 +34,7 @@
             android:launchMode="singleTask" />
         <activity
             android:name=".module.DrawActivity"
-            android:label="@string/title_activity_draw"
-            android:theme="@style/DrawTheme"></activity>
+            android:label="@string/title_activity_draw"></activity>
     </application>
 
 </manifest>

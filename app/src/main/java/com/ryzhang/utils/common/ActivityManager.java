@@ -67,6 +67,7 @@ public class ActivityManager {
 
     /**
      * 将当前Activity推入栈中
+     *
      * @param activity
      */
     public void pushActivity(Activity activity) {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--公共-->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF0000</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
     <!--白色-->
     <color name="white">#FFFFFF</color>
     <!--黑色-->
@@ -11,16 +12,7 @@
     <color name="translucent_white">#e0ffffff</color>
     <!--透明-->
     <color name="transparent">#00000000</color>
-
-    <!--白天-->
-    <color name="colorAccent">#FF4081</color>
-    <color name="draw_nav_head_center">#009688</color>
-    <color name="draw_nav_head_end">#00695C</color>
-    <color name="draw_nav_head_start">#4DB6AC</color>
-
-    <!--应用背景色-->
-    <color name="app_background">#FFFFFF</color>
-    <!--底部标题背景色-->
-    <color name="app_title_bottom_background">#EEEEEE</color>
-
+    <color name="draw_nav_head_center">#ff9688</color>
+    <color name="draw_nav_head_end">#ff695C</color>
+    <color name="draw_nav_head_start">#D4B6AC</color>
 </resources>

@@ -5,8 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 
 import com.ryzhang.android_demo.db.DatabaseHelper;
-import com.ryzhang.utils.annotation.ViewInjectUtil;
 import com.ryzhang.utils.common.ActivityManager;
+import com.ryzhang.utils.x;
 
 /**
  * @author ryzhang
@@ -22,7 +22,7 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ViewInjectUtil.inject(this);
+        x.view().inject(this);
         init();
     }
 

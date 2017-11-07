@@ -5,7 +5,7 @@ import android.content.Intent;
 
 import com.ryzhang.android_demo.R;
 import com.ryzhang.android_demo.module.DrawActivity;
-import com.ryzhang.utils.annotation.ContentView;
+import com.ryzhang.utils.view.annotation.ContentView;
 
 @ContentView(R.layout.activity_app_loading)
 public class LoadingActivity extends BaseActivity {

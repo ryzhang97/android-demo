@@ -10,10 +10,10 @@ import com.ryzhang.android_demo.db.datadict.Employee;
 import com.ryzhang.android_demo.db.datadict.Sign;
 import com.ryzhang.android_demo.db.datadict.User;
 import com.ryzhang.db.dao.BaseDao;
-import com.ryzhang.utils.CalendarUtil;
-import com.ryzhang.utils.annotation.ContentView;
-import com.ryzhang.utils.annotation.ViewInject;
+import com.ryzhang.utils.common.CalendarUtil;
 import com.ryzhang.utils.common.Logcat;
+import com.ryzhang.utils.view.annotation.ContentView;
+import com.ryzhang.utils.view.annotation.ViewInject;
 
 import me.leolin.shortcutbadger.ShortcutBadger;
 

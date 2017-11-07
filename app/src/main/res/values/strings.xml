@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">android-demo</string>
     <string name="title_activity_draw">DrawActivity</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>、
 
-    <string name="action_settings">Settings</string>
+    <string name="app_title_bottom_1">Test1</string>
+    <string name="app_title_bottom_2">Test2</string>
+    <string name="app_title_bottom_3">Test3</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

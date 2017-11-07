@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ryzhang.android_demo.module.fragment.Draw2Fragment">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--tools:showIn="@layout/activity_draw">-->
+        <!--状态栏-->
+        <include
+            android:id="@+id/app_bar_status"
+            layout="@layout/app_bar_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--标题-->
+        <include
+            android:id="@+id/app_draw_title"
+            layout="@layout/app_draw_title"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@id/vp_app_draw_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar_status" />
+        <!--内容-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/vp_app_draw_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_draw_title"
+            app:layout_constraintVertical_weight="1" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

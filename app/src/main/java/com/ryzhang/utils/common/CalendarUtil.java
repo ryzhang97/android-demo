@@ -1,6 +1,4 @@
-package com.ryzhang.utils;
-
-import com.ryzhang.utils.common.Logcat;
+package com.ryzhang.utils.common;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

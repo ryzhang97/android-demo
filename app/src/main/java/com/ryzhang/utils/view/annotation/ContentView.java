@@ -1,4 +1,4 @@
-package com.ryzhang.utils.annotation;
+package com.ryzhang.utils.view.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -11,8 +11,9 @@ import java.lang.annotation.Target;
  * @time 14:29
  * Project
  */
-@Target({ElementType.FIELD})
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ViewInject {
-    int value() default 0;
+public @interface ContentView {
+    int value();
 }
+
