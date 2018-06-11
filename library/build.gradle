@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "boolean", "LOG", "true"
+    }
+    buildTypes {
+        release {
+            zipAlignEnabled true // 进行压缩优化
+            minifyEnabled true// 进行混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "LOG", "false")
+        }
+    }
+}
+
+dependencies {
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    testImplementation 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.satyan:sugar:1.5'
+    compile 'com.j256.ormlite:ormlite-android:5.0'//数据库
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile 'com.google.zxing:core:3.3.1'//二维码
+    compile "me.leolin:ShortcutBadger:1.1.19@aar"//角标
+}

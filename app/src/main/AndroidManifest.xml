@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ryzhang.android_demo">
 
-    <!-- 荣耀权限 -->
+    <!-- 荣耀角标权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,24 +16,25 @@
 
         <!-- 启动页 -->
         <activity
-            android:name=".module.app.LoadingActivity"
+            android:name=".app.loading.LoadingActivity"
             android:theme="@style/LoadingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter> <!--要想在别的App上能成功调起App，必须添加intent过滤器-->
+
         </activity>
         <!-- 登录页 -->
         <activity
-            android:name=".module.LoginActivity"
+            android:name=".app.login.LoginActivity"
             android:launchMode="singleTask" />
         <!-- 主页 -->
         <activity
-            android:name=".module.MainActivity"
+            android:name=".app.main.MainActivity"
             android:launchMode="singleTask" />
+        <activity android:name=".app.test.TestActivity" />
         <activity
-            android:name=".module.DrawActivity"
+            android:name=".app.main.DrawActivity"
             android:label="@string/title_activity_draw"></activity>
     </application>
 

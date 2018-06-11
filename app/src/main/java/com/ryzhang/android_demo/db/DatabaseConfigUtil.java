@@ -20,11 +20,14 @@ import java.sql.SQLException;
  */
 public class DatabaseConfigUtil extends OrmLiteConfigUtil {
     private static final Class<?>[] classes = new Class[]{
-            User.class, Employee.class, WorkType.class, Sign.class
+            User.class, Employee.class, WorkType.class, Sign.class, Error.class
     };
 
     public static void main(String[] args) throws SQLException, IOException {
-        File configFile = new File(System.getProperty("user.dir") + "\\app\\src\\main\\res\\raw", "ormlite_config.txt");
-        writeConfigFile(configFile, classes);
+        System.out.println("-----bedin-----");
+//             File configFile = new File(System.getProperty("user.dir") + "\\app\\src\\main\\res\\raw", "ormlite_config.txt");
+        writeConfigFile(new File("ormlite_config.txt"), classes);
+
+        System.out.println("-----end-----");
     }
 }

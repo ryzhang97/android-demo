@@ -14,7 +14,7 @@
     <!--标题-->
     <include
         android:id="@+id/app_draw_title"
-        layout="@layout/app_draw_title"
+        layout="@layout/app_draw_title_top"
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toTopOf="@id/vp_app_draw_content"

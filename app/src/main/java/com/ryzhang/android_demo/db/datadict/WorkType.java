@@ -2,6 +2,7 @@ package com.ryzhang.android_demo.db.datadict;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+import com.match.library.db.BaseDatadict;
 
 /**
  * @author ryzhang

@@ -5,13 +5,15 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
+import com.match.library.utils.Logcat;
+import com.ryzhang.android_demo.R;
 import com.ryzhang.android_demo.db.datadict.Employee;
 import com.ryzhang.android_demo.db.datadict.Sign;
 import com.ryzhang.android_demo.db.datadict.User;
 import com.ryzhang.android_demo.db.datadict.WorkType;
-import com.ryzhang.utils.common.Logcat;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -47,8 +49,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static DatabaseHelper instance;
 
     private DatabaseHelper(Context context) {
-//        super(context, DB_NAME, null, VERSION, R.raw.ormlite_config);//利用配置文件生成表
-        super(context, DB_NAME, null, VERSION);
+        super(context, DB_NAME, null, VERSION, R.raw.ormlite_config);//利用配置文件生成表
+//        super(context, DB_NAME, null, VERSION);
         claz = getClass();
         Logcat.d(claz, "初始化 DatabaseHelper");
     }
@@ -60,7 +62,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(connectionSource, User.class);
             TableUtils.createTable(connectionSource, Employee.class);
             TableUtils.createTable(connectionSource, Sign.class);
-//            TableUtils.createTable(connectionSource, WorkType.class);
+            TableUtils.createTable(connectionSource, WorkType.class);
         } catch (SQLException e) {
             Logcat.e(claz, "创建数据库表失败");
             e.printStackTrace();
@@ -70,14 +72,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource, int oldVersion, int newVersion) {
         Logcat.d(claz, "当前数据版本：" + VERSION);
-//        try {
 //            String sql1 = "alter table tb_datadict add test text";
 //            getDao(Datadict.class).executeRawNoArgs(sql1);
-////            TableUtils.dropTable(connectionSource, Datadict.class, true);
-////            onCreate(sqLiteDatabase, connectionSource);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+//            TableUtils.dropTable(connectionSource, Datadict.class, true);
     }
 
     /**
@@ -103,7 +100,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
      * @return
      * @throws SQLException
      */
-    public synchronized Dao getDao(Class clazz) throws SQLException {
+    public <D extends Dao<T, ?>, T> D getDao(Class<T> clazz) throws SQLException {
         Dao dao = null;
         String className = clazz.getSimpleName();
         if (daos.containsKey(className)) {
@@ -113,7 +110,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             dao = super.getDao(clazz);
             daos.put(className, dao);
         }
-        return dao;
+        return (D) dao;
     }
 
     /**

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--透明-->
+    <color name="transparent">#00000000</color>
+    <!--半透明-->
+    <color name="translucent">#80000000</color>
+    <!--白色-->
+    <color name="white">#FFFFFF</color>
+    <!--黑色-->
+    <color name="black">#000000</color>
+    <color name="tv_black">#333333</color>
+    <color name="homeblack">#3C3C3C</color>
+    <!--橙色-->
+    <color name="alltvorange">#FFC300</color>
+
+
+    <!--背景色-->
+    <color name="allbackground">#F7F7F7</color>
+    <color name="alltvass">#999999</color>
+    <color name="line">#E5E5E5</color>
+
+
+</resources>

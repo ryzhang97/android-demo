@@ -4,12 +4,13 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.ryzhang.android_demo"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "boolean", "LOG", "true"
+        buildConfigField "boolean", "NETWORK", "false"
     }
     signingConfigs { //签名配置表
         debug {
@@ -30,7 +31,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField("boolean", "LOG", "false")
+            buildConfigField "boolean", "NETWORK", "true"
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -41,13 +47,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.j256.ormlite:ormlite-android:5.0'
-//    compile 'com.j256.ormlite:ormlite-core:5.0'
     compile 'com.google.code.gson:gson:2.2.4'
-    testCompile 'junit:junit:4.12'
-    compile "me.leolin:ShortcutBadger:1.1.19@aar"
+    compile project(path: ':library')
 }
 //allprojects {
 repositories {

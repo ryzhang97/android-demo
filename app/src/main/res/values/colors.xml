@@ -23,4 +23,17 @@
     <!--底部标题背景色-->
     <color name="app_title_bottom_background">#EEEEEE</color>
 
+
+    <!--选择器颜色-->
+    <!--背景色-->
+    <color name="bg_picker">#FFFFFF</color>
+    <!--标题字体颜色-->
+    <color name="tc_picker_title">#414146</color>
+    <!--选中字体颜色-->
+    <color name="tc_picker_content_check">#414146</color>
+    <!--未选中字体颜色-->
+    <color name="tc_picker_content2_uncheck">#ABABAB</color>
+    <!--边框颜色-->
+    <color name="bg_picker_border">#C7C7C7</color>
+
 </resources>
